@@ -1,0 +1,109 @@
+class MacD:
+    items = {"ba":"Mac Aloo Tikki", "ff":"French Fries", "wp":"Wrap", "cd":"cold drink"}
+    tables = ["M" +f"{i}" for i in range(1, 101)]
+    def order(self):
+        print("***** Welcome To KFC *******")
+        print("Items Available: ")
+        for item in MacD.items:
+            print("Press",item,"for", MacD.items[item])
+        ch_item = input("Enter Your Choice : ")
+        if ch_item not in MacD.items:
+            print("wrong Choice , Item not available : ")
+        else:
+            ch_type_order = input("Press o to order online and s for dining:")
+            if ch_type_order.lower() == "o":
+                print("Order Successfull")
+            elif ch_type_order.lower() == "s":
+                print("Table Available ")
+                print(MacD.tables)
+                ch_table = input("Enter the table number : ")
+                if ch_table.upper() in MacD.tables:
+                    print(f"Order Successfull please wait at table number {ch_table}")
+                else:
+                    print("Wrong choice you can't order here :")
+            else:
+                print("Wrong Choice")
+            
+
+
+
+class KFC:
+    items = {"vb":"Veg burger", "ff":"French Fries", "pp":"Pizza Prantha", "cd":"cold drink"}
+    tables = ["K" +f"{i}" for i in range(1, 101)]
+    def order(self):
+        print("***** Welcome To KFC *******")
+        print("Items Available: ")
+        for item in KFC.items:
+            print("Press",item,"for", KFC.items[item])
+        ch_item = input("Enter Your Choice : ")
+        if ch_item not in KFC.items:
+            print("wrong Choice , Item not available : ")
+        else:
+            ch_type_order = input("Press o to order online and s for dining:")
+            if ch_type_order.lower() == "o":
+                print("Order Successfull")
+            elif ch_type_order.lower() == "s":
+                print("Table Available ")
+                print(KFC.tables)
+                ch_table = input("Enter the table number : ")
+                if ch_table.upper() in KFC.tables:
+                    print(f"Order Successfull please wait at table number {ch_table}")
+                else:
+                    print("Wrong choice you can't order here :")
+            else:
+                print("Wrong Choice")
+
+
+
+class Dominos:
+    items = {"mg":"Margretta", "cl":"Choco lava", "cd":"cold drink"}
+    tables = ["D" +f"{i}" for i in range(1, 101)]
+    def order(self):
+        print("***** Welcome To KFC *******")
+        print("Items Available: ")
+        for item in Dominos.items:
+            print("Press",item,"for", Dominos.items[item])
+        ch_item = input("Enter Your Choice : ")
+        if ch_item not in Dominos.items:
+            print("wrong Choice , Item not available : ")
+        else:
+            ch_type_order = input("Press o to order online and s for dining:")
+            if ch_type_order.lower() == "o":
+                print("Order Successfull")
+            elif ch_type_order.lower() == "s":
+                print("Table Available ")
+                print(Dominos.tables)
+                ch_table = input("Enter the table number : ")
+                if ch_table.upper() in Dominos.tables:
+                    print(f"Order Successfull please wait at table number {ch_table}")
+                else:
+                    print("Wrong choice you can't order here :")
+            else:
+                print("Wrong Choice")
+
+
+class Zolato(MacD, Dominos, KFC):
+    def options(self):
+        print("---------WELCOME TO ZOLATO------------")
+        print("Press K for KFC ")
+        print("Press M for Macd ")
+        print("press D for Dominos ")
+        print("Press E for Exit ")
+        ch = input("Enter YOur Choice : ")
+        if ch.upper() == "K":
+            KFC.order(self)
+        elif ch.upper() == "M":
+            MacD.order(self)
+        elif ch.upper() == "D":
+            Dominos.order(self)
+        elif ch.upper() == "E":
+            print("Thank You for visiting us ")
+            return
+        
+        
+
+
+
+z = Zolato()
+z.options()
+
